@@ -1,6 +1,7 @@
 package edu.learning.springcore.beanconfig;
 
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
 
 /**
@@ -18,6 +19,12 @@ public class App
         Person person = (Person) context.getBean("person");
         person.speak();
         
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext
+        		("edu/learning/springcore/beanconfig/beans/bean.xml");
+        Student student = (Student) applicationContext.getBean("student");
+        student.speak();
+        
         ((FileSystemXmlApplicationContext)context).close();
+        ((ClassPathXmlApplicationContext)applicationContext).close();
     }
 }
