@@ -4,6 +4,9 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 	<bean id="person" 
 	class="edu.learning.springcore.beanconfig.Person">
+	<constructor-arg value="5"></constructor-arg>
+	<constructor-arg value="Moshiur"></constructor-arg>
+	<property name="address" value="Mymensingh"></property>
 	</bean>
 
 

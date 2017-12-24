@@ -18,6 +18,7 @@ public class App
         ApplicationContext context = new FileSystemXmlApplicationContext("beans.xml");
         Person person = (Person) context.getBean("person");
         person.speak();
+        System.out.println(person);
         
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext
         		("edu/learning/springcore/beanconfig/beans/bean.xml");
