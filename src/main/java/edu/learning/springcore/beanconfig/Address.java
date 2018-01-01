@@ -15,6 +15,14 @@ public class Address {
 		this.postCode = postCode;
 	}
 	
+	public void init() {
+		System.out.println("Address Init Created");
+	}
+	
+	public void destroy() {
+		System.out.println("Address Destroyed");
+	}
+	
 	public String getStreet() {
 		return street;
 	}

@@ -7,21 +7,23 @@ public class Person {
 	private String address;
 	private Address subAddress;
 	
-	
-	
 	public Person() {
 		
 	}
-
-
 
 	public Person(int id, String name) {
 		this.id = id;
 		this.name = name;
 	}
 
-
-
+	public void onCreate() {
+		System.out.println("Person Created "+ this);
+	}
+	
+	public void onDestroy() {
+		System.out.println("Person Destroyed ");
+	}
+	
 	public Address getSubAddress() {
 		return subAddress;
 	}
