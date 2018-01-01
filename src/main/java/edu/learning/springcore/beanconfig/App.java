@@ -24,7 +24,9 @@ public class App {
 		student.speak();
 
 		Address sAddress = (Address) context.getBean("saddress");
+		Address sAddress2 = (Address) context.getBean("saddress2");
 		System.out.println(sAddress);
+		System.out.println(sAddress2);
 		System.out.println(person);
 
 		((FileSystemXmlApplicationContext) context).close();

@@ -24,6 +24,10 @@ public class Person {
 		System.out.println("Person Destroyed ");
 	}
 	
+	public static Person getInstance(int id, String name) {
+		System.out.println("Factory method! GetInstance");
+		return new Person(id, name);
+	}
 	public Address getSubAddress() {
 		return subAddress;
 	}
