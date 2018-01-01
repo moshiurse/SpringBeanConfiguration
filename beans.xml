@@ -2,12 +2,15 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-	<bean id="person" 
-	class="edu.learning.springcore.beanconfig.Person">
-	<constructor-arg value="5"></constructor-arg>
-	<constructor-arg value="Moshiur"></constructor-arg>
-	<property name="address" value="Mymensingh"></property>
+	<bean id="person" class="edu.learning.springcore.beanconfig.Person">
+		<constructor-arg value="5"></constructor-arg>
+		<constructor-arg value="Moshiur"></constructor-arg>
+		<property name="address" value="Mymensingh"></property>
+		<property name="subAddress" ref="saddress"></property>
 	</bean>
 
-
+	<bean id="saddress" class="edu.learning.springcore.beanconfig.Address">
+		<constructor-arg name="street" value="Gouripur"></constructor-arg>
+		<constructor-arg name="postCode" value="2210"></constructor-arg>
+	</bean>
 </beans>

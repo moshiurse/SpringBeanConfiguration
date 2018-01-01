@@ -5,6 +5,7 @@ public class Person {
 	private int id;
 	private String name;
 	private String address;
+	private Address subAddress;
 	
 	
 	
@@ -17,6 +18,18 @@ public class Person {
 	public Person(int id, String name) {
 		this.id = id;
 		this.name = name;
+	}
+
+
+
+	public Address getSubAddress() {
+		return subAddress;
+	}
+
+
+
+	public void setSubAddress(Address subAddress) {
+		this.subAddress = subAddress;
 	}
 
 
@@ -59,12 +72,9 @@ public class Person {
 
 
 
-	
-
-
 	@Override
 	public String toString() {
-		return "Person [id=" + id + ", name=" + name + ", address=" + address + "]";
+		return "Person [id=" + id + ", name=" + name + ", address=" + address + ", subAddress=" + subAddress + "]";
 	}
 
 

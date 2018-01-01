@@ -8,24 +8,26 @@ import org.springframework.context.support.FileSystemXmlApplicationContext;
  * Hello world!
  *
  */
-public class App 
-{
-    public static void main( String[] args )
-    {
-        HelloWorld helloWorld = new HelloWorld();
-        helloWorld.hello();
-        
-        ApplicationContext context = new FileSystemXmlApplicationContext("beans.xml");
-        Person person = (Person) context.getBean("person");
-        person.speak();
-        System.out.println(person);
-        
-        ApplicationContext applicationContext = new ClassPathXmlApplicationContext
-        		("edu/learning/springcore/beanconfig/beans/bean.xml");
-        Student student = (Student) applicationContext.getBean("student");
-        student.speak();
-        
-        ((FileSystemXmlApplicationContext)context).close();
-        ((ClassPathXmlApplicationContext)applicationContext).close();
-    }
+public class App {
+	public static void main(String[] args) {
+		HelloWorld helloWorld = new HelloWorld();
+		helloWorld.hello();
+
+		ApplicationContext context = new FileSystemXmlApplicationContext("beans.xml");
+		Person person = (Person) context.getBean("person");
+		person.speak();
+		System.out.println(person);
+
+		ApplicationContext applicationContext = new ClassPathXmlApplicationContext(
+				"edu/learning/springcore/beanconfig/beans/bean.xml");
+		Student student = (Student) applicationContext.getBean("student");
+		student.speak();
+
+		Address sAddress = (Address) context.getBean("saddress");
+		System.out.println(sAddress);
+		System.out.println(person);
+
+		((FileSystemXmlApplicationContext) context).close();
+		((ClassPathXmlApplicationContext) applicationContext).close();
+	}
 }
