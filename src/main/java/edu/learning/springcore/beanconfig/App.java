@@ -30,6 +30,11 @@ public class App {
 			System.out.println(name);
 		}
 		
+		for(Address address:person.getAllAddress()) {
+			System.out.println(address);
+		}
+		
+		
 		System.out.println(sAddress);
 		System.out.println(sAddress2);
 		System.out.println(person);

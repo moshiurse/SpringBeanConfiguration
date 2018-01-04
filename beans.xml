@@ -4,19 +4,35 @@
 	xmlns:c="http://www.springframework.org/schema/c"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
 	default-init-method="init" default-destroy-method="destroy">
-	
+
 	<bean id="person" class="edu.learning.springcore.beanconfig.Person"
 		init-method="onCreate" destroy-method="onDestroy" factory-method="getInstance"
 		c:id="6" c:name="John">
 		<property name="names">
-		<list>
-		<value>Moshiur</value>
-		<value>Rahman</value>
-		<value>motiur</value>
-		</list>
+			<list>
+				<value>Moshiur</value>
+				<value>Rahman</value>
+				<value>motiur</value>
+			</list>
 		</property>
-		<!--<constructor-arg value="5"></constructor-arg>
-		<constructor-arg value="Moshiur"></constructor-arg>  -->
+
+		<property name="allAddress">
+			<list>
+				<ref bean="saddress3" />
+				<ref bean="saddress4" />
+				<ref bean="saddress5" />
+			</list>
+		</property>
+
+		<property name="importantPlace">
+			<bean class="edu.learning.springcore.beanconfig.Address">
+				<property name="street" value="Gouripur"></property>
+				<property name="postCode" value="2210"></property>
+			</bean>
+		</property>
+
+
+		<!--<constructor-arg value="5"></constructor-arg> <constructor-arg value="Moshiur"></constructor-arg> -->
 		<property name="address" value="Mymensingh"></property>
 		<property name="subAddress" ref="saddress"></property>
 	</bean>
@@ -40,5 +56,20 @@
 	<bean id="saddress2" class="edu.learning.springcore.beanconfig.Address"
 		p:street="Valuka" p:postCode="1233">
 
+	</bean>
+
+	<bean id="saddress3" class="edu.learning.springcore.beanconfig.Address">
+		<property name="street" value="Gouripur"></property>
+		<property name="postCode" value="2210"></property>
+	</bean>
+
+	<bean id="saddress4" class="edu.learning.springcore.beanconfig.Address">
+		<property name="street" value="Valuka"></property>
+		<property name="postCode" value="2210"></property>
+	</bean>
+
+	<bean id="saddress5" class="edu.learning.springcore.beanconfig.Address">
+		<property name="street" value="Trishal"></property>
+		<property name="postCode" value="2210"></property>
 	</bean>
 </beans>

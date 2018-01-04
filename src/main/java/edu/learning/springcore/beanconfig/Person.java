@@ -11,6 +11,10 @@ public class Person {
 	
 	private List<String> names;
 	
+	private List<Address> allAddress;
+	
+	private Address importantPlace;
+	
 	public Person() {
 		
 	}
@@ -90,12 +94,34 @@ public class Person {
 		this.names = names;
 	}
 
-	@Override
-	public String toString() {
-		return "Person [id=" + id + ", name=" + name + ", address=" + address + ", subAddress=" + subAddress + "]";
+	
+	
+	public List<Address> getAllAddress() {
+		return allAddress;
 	}
 
+	public void setAllAddress(List<Address> allAddress) {
+		this.allAddress = allAddress;
+	}
+	
+	
 
+	public Address getImportantPlace() {
+		return importantPlace;
+	}
+
+	public void setImportantPlace(Address importantPlace) {
+		this.importantPlace = importantPlace;
+	}
+
+	
+
+
+	@Override
+	public String toString() {
+		return "Person [id=" + id + ", name=" + name + ", address=" + address + ", subAddress=" + subAddress
+				+ ", names=" + names + ", allAddress=" + allAddress + ", importantPlace=" + importantPlace + "]";
+	}
 
 	public void speak() {
 		System.out.println("I am new Person !");
