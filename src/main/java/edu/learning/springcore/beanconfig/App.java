@@ -25,6 +25,11 @@ public class App {
 
 		Address sAddress = (Address) context.getBean("saddress");
 		Address sAddress2 = (Address) context.getBean("saddress2");
+		
+		for(String name:person.getNames()) {
+			System.out.println(name);
+		}
+		
 		System.out.println(sAddress);
 		System.out.println(sAddress2);
 		System.out.println(person);

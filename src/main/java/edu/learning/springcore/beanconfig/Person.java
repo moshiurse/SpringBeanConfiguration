@@ -1,11 +1,15 @@
 package edu.learning.springcore.beanconfig;
 
+import java.util.List;
+
 public class Person {
 	
 	private int id;
 	private String name;
 	private String address;
 	private Address subAddress;
+	
+	private List<String> names;
 	
 	public Person() {
 		
@@ -77,6 +81,14 @@ public class Person {
 	}
 
 
+
+	public List<String> getNames() {
+		return names;
+	}
+
+	public void setNames(List<String> names) {
+		this.names = names;
+	}
 
 	@Override
 	public String toString() {

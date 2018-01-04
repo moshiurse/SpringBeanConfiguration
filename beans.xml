@@ -1,37 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:c="http://www.springframework.org/schema/c"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
-	default-init-method="init"
-	default-destroy-method="destroy">
+	default-init-method="init" default-destroy-method="destroy">
+	
 	<bean id="person" class="edu.learning.springcore.beanconfig.Person"
-	init-method="onCreate" destroy-method="onDestroy" factory-method="getInstance">
-		<constructor-arg value="5"></constructor-arg>
-		<constructor-arg value="Moshiur"></constructor-arg>
+		init-method="onCreate" destroy-method="onDestroy" factory-method="getInstance"
+		c:id="6" c:name="John">
+		<property name="names">
+		<list>
+		<value>Moshiur</value>
+		<value>Rahman</value>
+		<value>motiur</value>
+		</list>
+		</property>
+		<!--<constructor-arg value="5"></constructor-arg>
+		<constructor-arg value="Moshiur"></constructor-arg>  -->
 		<property name="address" value="Mymensingh"></property>
 		<property name="subAddress" ref="saddress"></property>
 	</bean>
-	
+
 	<bean id="person2" class="edu.learning.springcore.beanconfig.Person"
-	init-method="onCreate" destroy-method="onDestroy"
-	factory-method="createPerson" factory-bean="personfactory">
+		init-method="onCreate" destroy-method="onDestroy" factory-method="createPerson"
+		factory-bean="personfactory" p:subAddress-ref="saddress">
 		<constructor-arg value="10"></constructor-arg>
 		<constructor-arg value="Habib"></constructor-arg>
 		<property name="address" value="Dhaka"></property>
-		<property name="subAddress" ref="saddress"></property>
+		<!-- <property name="subAddress" ref="saddress"></property> -->
 	</bean>
-	
-	<bean id="personfactory"
-	class="edu.learning.springcore.beanconfig.PersonFactory"></bean>
+
+	<bean id="personfactory" class="edu.learning.springcore.beanconfig.PersonFactory"></bean>
 
 	<bean id="saddress" class="edu.learning.springcore.beanconfig.Address">
 		<constructor-arg name="street" value="Gouripur"></constructor-arg>
 		<constructor-arg name="postCode" value="2210"></constructor-arg>
 	</bean>
-	
+
 	<bean id="saddress2" class="edu.learning.springcore.beanconfig.Address"
-	p:street="Valuka" p:postCode="1233">
-		
+		p:street="Valuka" p:postCode="1233">
+
 	</bean>
 </beans>
