@@ -38,6 +38,9 @@ public class App {
 		System.out.println(sAddress);
 		System.out.println(sAddress2);
 		System.out.println(person);
+		
+		ContactBook contactBook = (ContactBook) context.getBean("contactbook");
+		System.out.println(contactBook.toString());
 
 		((FileSystemXmlApplicationContext) context).close();
 		((ClassPathXmlApplicationContext) applicationContext).close();

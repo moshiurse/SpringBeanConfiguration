@@ -46,6 +46,17 @@
 		<!-- <property name="subAddress" ref="saddress"></property> -->
 	</bean>
 
+<bean id="contactbook" class="edu.learning.springcore.beanconfig.ContactBook">
+<property name="addresses">
+<map>
+<entry key="first" value-ref="saddress"></entry>
+<entry key="second" value-ref="saddress2"></entry>
+<entry key="third" value-ref="saddress3"></entry>
+<entry key="fourth" value-ref="saddress4"></entry>
+<entry key="fifth" value-ref="saddress5"></entry>
+</map>
+</property>
+</bean>
 	<bean id="personfactory" class="edu.learning.springcore.beanconfig.PersonFactory"></bean>
 
 	<bean id="saddress" class="edu.learning.springcore.beanconfig.Address">
